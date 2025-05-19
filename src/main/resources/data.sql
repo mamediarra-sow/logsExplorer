@@ -1,0 +1,6 @@
+INSERT INTO logs_object (timestamp_seconds, timestamp_nanos, severity, thread, logger, message, context) VALUES
+                                                                                                      ('1716047990', '123456789', 'INFO', 'main', 'com.example.App', 'Application started', 'Init context'),
+                                                                                                      ('1716048000', '987654321', 'ERROR', 'thread-1', 'com.example.Service', 'Service failed to respond', 'Retry logic'),
+                                                                                                      ('1716048010', '111222333', 'WARN', 'thread-2', 'com.example.Repository', 'Slow database query', 'Performance monitor'),
+                                                                                                      ('1716048020', '444555666', 'DEBUG', 'thread-3', 'com.example.Controller', 'Incoming request: /api/test', 'Request context'),
+                                                                                                      ('1716048030', '777888999', 'INFO', 'thread-4', 'com.example.Logger', 'Log processed successfully', 'Logging module');

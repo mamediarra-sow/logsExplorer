@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: 'mysql:latest'
+    container_name: mysql
+    restart: always
+    environment:
+      - 'MYSQL_DATABASE=dblogs'
+      - 'MYSQL_ROOT_PASSWORD=Beauty_fullSoul9'
+      - 'MYSQL_ROOT_HOST=%'
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+
+  app:
+    build: .
+    container_name: logs-explorer-app
+    depends_on:
+        - mysql
+    ports:
+        - '8080:8080'
+    environment:
+        MYSQL_HOST: mysql
+        SPRING_DATASOURCE_USERNAME: root
+        SPRING_DATASOURCE_PASSWORD: Beauty_fullSoul9
+    restart: always
+
+volumes:
+  mysql_data:
